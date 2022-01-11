@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<center>
+<body>
+    <h1 id="RedditSubTitle">/r/{{ RedditSub }}</h1>
+</body>
+</center>
+<ul>
+    {% for submission in hot_subreddit %}
+        <div>
+            {{ submission.title }}
+            <h4><img class="post" src= {{submission.url}} alt="     ">
+            </h4>
+            <form action="/RedComm" method="post">
+            <h4>{{ submission.created_utc }} <a href="{{ url_for('RedComm') }}"><input class="RedComm" type="button" name="RedComm" value="Comments"></input></a> ⬆️{{ submission.score }}⬇️ <a href={{submission.url}}>{{ submission.url }}</a></h4>
+        </div>
+
+    {% endfor %}
+</ul>
+<body class="more">
+    <a href="{{url_for('RedditSubMore')}}"><input type="button" value="Load More" class="more"></a>
+</body>
+<style>
+    div{
+        width: 20;
+        height: auto;
+        padding: 10px;
+        border: 5px solid gray;
+        text-align: left;
+        align-items: left;
+    }
+    input.RedComm{
+        text-align: right;
+        width: auto;
+    }
+    img.post{
+        width: 350px;
+        height: 350px;
+        margin: 5px;
+    }
+    h4{
+        text-align: justify;
+    }
+    body.more{
+        text-align: center;
+    }
+    input.more{
+        width: 200;
+    }
+</style>
+</html>
