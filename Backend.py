@@ -110,9 +110,3 @@ def RedComm():
 
 if __name__ == ('__main__'):
     app.run(debug=True)
-
-    #notestesting
-    #def cup():
-    #for submission in hot_subreddit:
-    #   print(submission.image
-    #   )
