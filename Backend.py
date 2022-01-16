@@ -9,15 +9,8 @@ import random
 from praw import reddit, models
 from praw.models.listing.mixins import submission, subreddit
 import requests
-import cv2
-import numpy as np
-import pickle
-from bs4 import BeautifulSoup
-import requests
 from praw.models import Image, MoreComments
 import json
-
-from testinggrounds import Subreddit
 
 #hooking up the server
 IMAGE_FOLDER = os.path.join('static', 'photo')
